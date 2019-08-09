@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NYTNews</string>
+    <string name="action_save">Save article</string>
+    <string name="action_delete">Delete article</string>
+    <string-array name="fragments">
+        <item>Most Emailed</item>
+        <item>Most Shared</item>
+        <item>Most Viewed</item>
+        <item>Saved</item>
+    </string-array>
+
+</resources>
