@@ -29,7 +29,7 @@ import com.example.testapp.nytnesws.presenters.TidingsPresenter
 import com.example.testapp.nytnesws.views.SavedArticlesView
 import com.example.testapp.nytnesws.views.TidingsView
 import com.github.rahatarmanahmed.cpv.CircularProgressView
-import kotlinx.android.synthetic.main.emailed_fragment.*
+import kotlinx.android.synthetic.main.most_fragment.*
 import kotlinx.android.synthetic.main.list_fragment.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -128,6 +128,7 @@ class FragmentSavedArticles : MvpAppCompatFragment(), SavedArticlesView {
         bundle.putInt("item_id",id)
         fragment.arguments = bundle
         val fmTransaction = activity?.supportFragmentManager?.beginTransaction()
+        fmTransaction?.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
         fmTransaction?.replace(R.id.container_inside,fragment)?.addToBackStack("TAG_FRAGMENT")?.commit()
     }
 

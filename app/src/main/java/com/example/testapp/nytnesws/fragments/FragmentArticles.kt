@@ -16,8 +16,6 @@ import com.example.testapp.nytnesws.presenters.TidingsPresenter
 import com.example.testapp.nytnesws.views.TidingsView
 import com.github.rahatarmanahmed.cpv.CircularProgressView
 
-import java.util.ArrayList
-
 class FragmentArticles : MvpAppCompatFragment(), TidingsView {
 
 
@@ -33,7 +31,7 @@ class FragmentArticles : MvpAppCompatFragment(), TidingsView {
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.emailed_fragment, container, false)
+        val view = inflater.inflate(R.layout.most_fragment, container, false)
         recyclerView = view.findViewById(R.id.emailed_recyclerview)
         mCpvWait = view.findViewById(R.id.cpv_tidings)
         return view
@@ -73,6 +71,7 @@ class FragmentArticles : MvpAppCompatFragment(), TidingsView {
         val fragment = ItemDetailFragment()
         fragment.arguments = bundle
         val fmTransaction = activity?.supportFragmentManager?.beginTransaction()
+        fmTransaction?.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
         fmTransaction?.replace(R.id.container_inside,fragment)?.addToBackStack("TAG_FRAGMENT")?.commit()
     }
 
