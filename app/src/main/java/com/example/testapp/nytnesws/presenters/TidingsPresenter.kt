@@ -41,7 +41,6 @@ class TidingsPresenter : MvpPresenter<TidingsView>() {
     }
 
     fun openNews(result: Result){
-//        viewState.startLoading()
         val bundle = Bundle()
         bundle.putString(
             ItemDetailFragment.EXTRA_NEWS_CATEGORY,
@@ -67,7 +66,6 @@ class TidingsPresenter : MvpPresenter<TidingsView>() {
             ItemDetailFragment.EXTRA_NEWS_IMAGE,
             result.media[0].mediaMetadata[2].url
         )
-//        viewState.endLoadin
         viewState.openNews(bundle = bundle)
     }
 

@@ -8,7 +8,5 @@ import com.example.testapp.nytnesws.models.Result
 @StateStrategyType(value = AddToEndSingleStrategy::class)
 interface NewsView: MvpView {
     fun showNews()
-    fun startLoading()
-    fun endLoading()
     fun showError(text: String)
 }

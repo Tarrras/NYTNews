@@ -34,7 +34,6 @@ class ItemDetailFragment : MvpAppCompatFragment(), NewsView {
     lateinit var aa_description: TextView
     lateinit var aa_newsurl: TextView
     lateinit var expanded: ImageView
-  //  lateinit var cpvNews: CircularProgressView
     lateinit var nstdScrollView: NestedScrollView
     private var category: String? = null
     private var title: String? = null
@@ -123,9 +122,6 @@ class ItemDetailFragment : MvpAppCompatFragment(), NewsView {
                 context?.let { newsPresenter.saveNewsToDatabase(news, it) }
                 return true
             }
-//            android.R.id.home -> {
-//
-//            }
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -161,17 +157,6 @@ class ItemDetailFragment : MvpAppCompatFragment(), NewsView {
         }
     }
 
-    override fun startLoading() {
-       // cpvNews.visibility = View.VISIBLE
-//        appBarLayout.visibility = View.GONE
-//        nstdScrollView.visibility = View.GONE
-    }
-
-    override fun endLoading() {
-        //cpvNews.visibility = View.GONE
-//        appBarLayout.visibility = View.VISIBLE
-//        nstdScrollView.visibility = View.VISIBLE
-    }
 
     override fun showError(text: String) {
         Toast.makeText(context,text,Toast.LENGTH_SHORT).show()

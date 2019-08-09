@@ -45,12 +45,6 @@ class SavedArticlesPresenter: MvpPresenter<SavedArticlesView>() {
 
     fun deleteArticle(context: Context,news: News){
         val database = NewsDatabase.instance(context)
-//        Single.fromCallable {
-//            database.newsDAO.deleteNews(id)
-//        }.subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe()
-//        viewState.showError("Удалено")
         val disposable = Observable.create(
             ObservableOnSubscribe<Any> {
                 database.newsDAO.deleteArticle(news)
